@@ -27,12 +27,12 @@ const incomeAmount = document.getElementById("income-amount-input");
 //4.variables:
 let ENTRY_LIST;
 let balance = 0,
-    income = 0,
+    income  = 0,
     outcome = 0;
 const DELETE = "delete",
-    EDIT   = "edit";
+      EDIT   = "edit";
 
-//check if there is a data in Local storage
+//22.check if there is a data in Local storage
 ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
 updateUI();
 
@@ -59,14 +59,15 @@ allBtn.addEventListener("click", function() {
     inactive( [incomeBtn, expenseBtn] );
 });
 
+//7.
 addExpense.addEventListener("click", function() {
     //check if one of the inputs is empty, then => EXIT
     if (!expenseTitle.value || !expenseAmount.value) return;
 
-    //save entry to ENTRY_LIST
+    //8.save entry to ENTRY_LIST
     let expense = {
-        type: "expense",
-        title: expenseTitle.value,
+          type: "expense",
+         title: expenseTitle.value,
         amount: parseInt(expenseAmount.value)
     }
     ENTRY_LIST.push(expense);
@@ -75,11 +76,12 @@ addExpense.addEventListener("click", function() {
     clearInput([expenseTitle ,expenseAmount])
 })
 
+//9.
 addIncome.addEventListener("click", function() {
     //check if one of the inputs is empty, then => EXIT
     if (!incomeTitle.value || !incomeAmount.value) return;
 
-    //save entry to ENTRY_LIST
+    //10.save entry to ENTRY_LIST
     let income = {
         type: "income",
         title: incomeTitle.value,
@@ -92,12 +94,14 @@ addIncome.addEventListener("click", function() {
     clearInput([incomeTitle ,incomeAmount])
 })
 
+//23.
 incomeList.addEventListener("click", deleteOrEdit);
 expenseList.addEventListener("click", deleteOrEdit);
 allList.addEventListener("click", deleteOrEdit);
 
 //6.HELPERS:
 
+//24.
 function deleteOrEdit(event) {
     const targetBtn = event.target;
 
@@ -110,12 +114,14 @@ function deleteOrEdit(event) {
     }
 }
 
+//25.
 function deleteEntry(entry) {
     ENTRY_LIST.splice( entry.id, 1);
 
     updateUI();
 }
 
+//26.
 function editEntry(entry) {
     let ENTRY = ENTRY_LIST[entry.id];
 
@@ -130,21 +136,24 @@ function editEntry(entry) {
     deleteEntry(entry);
 }
 
+//11.
 function updateUI() {
     income = calculateTotal("income", ENTRY_LIST);
     outcome = calculateTotal("expense", ENTRY_LIST);
     balance = Math.abs(calculateBalance(income, outcome));
 
-    //determine sign of balance
+    //17.determine sign of balance
     let sign = (income >= outcome) ? "$" : "-$";
 
-    //update UI
+    //20.update UI
     balanceElement.innerHTML = `<small>${sign}</small>${balance}`;
     outcomeTotalElement.innerHTML = `<small>$</small>${outcome}`;
     incomeTotalElement.innerHTML = `<small>$</small>${income}`;
 
+    //15.
     clearElement( [expenseList, incomeList, allList] );
 
+    //18.
     ENTRY_LIST.forEach( (entry, index) => {
         if (entry.type === "expense") {
             showEntry(expenseList, entry.type, entry.title, entry.amount, index)
@@ -154,11 +163,13 @@ function updateUI() {
         showEntry(allList, entry.type, entry.title, entry.amount, index);
     });
 
+    //21.
     updateChart(income, outcome);
-
+    //22.
     localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
 
+//19.
 function showEntry(list, type, title, amount, id) {
     const entry = ` <li id = "${id}" class="${type}">
                         <div class="entry">${title}: $${amount}</div>
@@ -167,15 +178,17 @@ function showEntry(list, type, title, amount, id) {
                     </li>`;
     const position = "afterbegin";
 
-    list.insertAdjacentHTML(position, entry);
+    list.insertAdjacentHTML(position, entry);//every entry on the top of the list
 }
 
+//16.
 function clearElement(elements) {
     elements.forEach( element => {
         element.innerHTML = "";
     })
 }
 
+//13.
 function calculateTotal(type, list) {
     let sum = 0;
 
@@ -188,14 +201,19 @@ function calculateTotal(type, list) {
     return sum;
 }
 
+//14.
 function calculateBalance(income, outcome) {
     return income - outcome;
 }
+
+//12.
 function clearInput(inputs) {
     inputs.forEach( input => {
         input.value = "";
-    })
+    });
 }
+
+//6.show/hide & active/inactive
 function show(element) {
     element.classList.remove("hide")
 }
