@@ -97,3 +97,40 @@ form button:hover {
     transform: translateY(8rem) rotateZ(40deg);
     opacity: 0;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: darkgrey;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background: coral;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.6s ease;
+}
+
+.select:hover::after {
+    background: cyan;
+    color: coral;
+}
