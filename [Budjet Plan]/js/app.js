@@ -1,6 +1,6 @@
 class UI {
-  //all intances:
-  constructor() { // run every time we initiate the class
+  //all instances:
+  constructor() { // run every time we instantiate the class
     this.budgetFeedback = document.querySelector(".budget-feedback");
     this.expenseFeedback = document.querySelector(".expense-feedback");
     this.budgetForm = document.getElementById("budget-form");
@@ -17,7 +17,7 @@ class UI {
     this.itemID = 0;
     
   }
-  //submit budget:
+  //5.submit budget:
   submitBudgetForm() {
      const value = this.budgetInput.value;
      if (value === '' || value < 0) {
@@ -26,7 +26,7 @@ class UI {
          this.budgetFeedback.innerHTML = `<p>Value cannot be negative or empty!</p>`;
          const self = this;
          
-         //hide alert message:
+         //6.hide alert message:
          setTimeout(function() {
             self.budgetFeedback.classList.remove('showItem')
          }, 4000);
@@ -38,7 +38,7 @@ class UI {
      }
   }
 
-  //show BALANCE:
+  //7.show BALANCE:
   showBalance() {
      const expense = this.totalExpense();
      const total = parseInt(this.budgetAmount.textContent) - expense;
@@ -108,7 +108,7 @@ class UI {
       this.expenseList.appendChild(div);
   }
 
-  //total expense
+  //8.total expense
   totalExpense() {
     let total = 0;
     if (this.itemList.length > 0) {
@@ -168,10 +168,10 @@ function eventListeners() {
   const expenseForm = document.getElementById('expense-form');
   const expenseList = document.getElementById('expense-list');
 
-  //create instance of UI Class:(access to all properties of clas UI)
+  //3.create instance of UI Class:(access to all properties of class UI)
   const ui = new UI();
 
-  //budget form submit:
+  //4.budget form submit:
   budgetForm.addEventListener('submit', function (event) {
       event.preventDefault();
 
