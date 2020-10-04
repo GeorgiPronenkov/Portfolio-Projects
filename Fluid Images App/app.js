@@ -8,10 +8,9 @@ previews.forEach((preview) => {
         modal.classList.add("open");
         original.classList.add('open');
         //Dynamically change text and image
-        const originalSrc = preview.getAttribute('data-original');
+        const originalSrc = preview.getAttribute('data-original');//get data-original
         original.src = `./full/${originalSrc}`;
-        const altText = preview.alt;
-        caption.textContent = altText;
+        caption.textContent = preview.alt;
     });
 });
 
