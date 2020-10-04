@@ -87,7 +87,7 @@ services.forEach(function(service) {
  
    //get values from DOM elements
   let billAmount = inputBill.value;
-  let  numUsers = inputUsers.value;
+  let numUsers = inputUsers.value;
   let selectedService = serviceValue.value;
     
   //get feedback if info is not validated  
