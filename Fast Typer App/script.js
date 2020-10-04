@@ -39,7 +39,7 @@ let score = 0;
 //Initialize time:
 let time = 10;
 
-//Setting the difficulty
+//Set the difficulty:
 let difficulty = localStorage.getItem('difficulty') !== null 
     ? localStorage.getItem('difficulty') : 'medium';
 
@@ -85,10 +85,10 @@ function updateTime() {
 //game over:
 function gameOver() {
   endGameElement.innerHTML = `
-    <h1>Time ran out!</h1>
-    <p>Your Final Score is ${score}</p>
-    <button onclick="location.reload()">Reload</button>
-  `
+                              <h1>Time ran out!</h1>
+                              <p>Your Final Score is ${score}</p>
+                              <button onclick="location.reload()">Reload</button>
+                               `;
   endGameElement.style.display = 'flex';
 }
 
