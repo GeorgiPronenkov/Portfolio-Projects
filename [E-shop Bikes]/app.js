@@ -1,4 +1,4 @@
-//set variables:
+//1.set variables:
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
 const clearCartBtn = document.querySelector('.clear-cart');
@@ -11,56 +11,54 @@ const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 const btns = document.querySelectorAll('.bag-btn');
 
-//cart
+//cart***
 let cart = [];
 //buttons
 let buttonsDOM = [];
 
 //class for getting the products
 class Products {
-
     async getProducts() {
-      try {
-        let result = await fetch('products.json');
-        let data = await result.json();
+       try {
+          let result = await fetch('products.json');
+          let data = await result.json();
 
-        let products = data.items;
-        products = products.map(item => {
-            const { title, price } = item.fields;
-            const { id } = item.sys;
-            const image = item.fields.image.fields.file.url;
-                
-            return { title, price, id, image };            
-        });
-    
-        return products;
+          let products = data.items;
+          products = products.map(item => {
+             const { title, price } = item.fields;
+             const { id } = item.sys;
+             const image = item.fields.image.fields.file.url;
 
-        } catch (error) {
-            console.log(error);
-        }    
+             return { title, price, id, image };
+          });
+
+          return products;
+
+       } catch (error) {
+             console.log(error);
+       }
     }
 }
 
 //UI class - display products
 class UI {
-
     displayProducts(products) {
         let result = '';
         products.forEach(product => {
             result += `
-             <!-- single product -->
-             <article class="product">
-                <div class="img-container">
-                    <img src="${product.image}" alt="product" class="product-img">
-                    <button class="bag-btn" data-id=${product.id}>
-                        <i class="fas fa-shopping-cart"></i>add to cart
-                    </button>
-                </div>
-                <h3>${product.title}</h3>
-                <h4>$${product.price}</h4>
-             </article>
-             <!-- end of single product -->
-            `;
+                     <!-- single product -->
+                     <article class="product">
+                        <div class="img-container">
+                            <img src="${product.image}" alt="product" class="product-img">
+                            <button class="bag-btn" data-id=${product.id}>
+                                <i class="fas fa-shopping-cart"></i>add to cart
+                            </button>
+                        </div>
+                        <h3>${product.title}</h3>
+                        <h4>$${product.price}</h4>
+                     </article>
+                     <!-- end of single product -->
+                    `;
         });
         //add it to product-center div
         productsDOM.innerHTML = result;
@@ -83,7 +81,7 @@ class UI {
                 event.target.innerText = "In Cart";
                 event.target.disabled = true;
 
-                //get product from products
+                //get product from products:
                 let cartItem = {...Storage.getProduct(id), amount:1}; //id from dataset
 
                 //add product to cart(array)
@@ -119,18 +117,18 @@ class UI {
         const div = document.createElement('div');
         div.classList.add('cart-item');
         div.innerHTML = `
-             <img src="${item.image}" alt="product">
-                <div>
-                  <h4>${item.title}</h4>
-                  <h5>$${item.price}</h5>
-                  <span class="remove-item" data-id=${item.id}>remove</span>
-                </div>
-                <div>
-                   <i class="fas fa-chevron-up" data-id=${item.id}></i> 
-                   <p class="item-amount">${item.amount}</p>
-                   <i class="fas fa-chevron-down" data-id=${item.id}></i>
-                 </div>   
-        `
+                         <img src="${item.image}" alt="product">
+                            <div>
+                              <h4>${item.title}</h4>
+                              <h5>$${item.price}</h5>
+                              <span class="remove-item" data-id=${item.id}>remove</span>
+                            </div>
+                            <div>
+                               <i class="fas fa-chevron-up" data-id=${item.id}></i> 
+                               <p class="item-amount">${item.amount}</p>
+                               <i class="fas fa-chevron-down" data-id=${item.id}></i>
+                             </div>   
+                        `;
         cartContent.appendChild(div);
     }
 
@@ -196,7 +194,7 @@ class UI {
     }
 
     clearCart() {
-        //get all ids items in cart
+        //get all ids of the items in cart
         let cartItems = cart.map(item => item.id);
         cartItems.forEach(id => this.removeItem(id));
         while(cartContent.children.length > 0) {
@@ -238,8 +236,8 @@ class Storage {
 
     static getCart() {
         return localStorage.getItem('cart') ?
-            JSON.parse(localStorage.getItem('cart')) :
-            []; //check if item exist(if not return empty array)
+               JSON.parse(localStorage.getItem('cart')) : [];
+        //check if item exist(if not return empty array)
     }
 }
 
@@ -254,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //get all products
     products.getProducts()
-            .then(products => {
+            .then(products => { //console.log(products)
             ui.displayProducts(products)
         Storage.saveProducts(products);  
     }).then(() => {
