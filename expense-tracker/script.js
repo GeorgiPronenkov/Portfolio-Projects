@@ -23,7 +23,7 @@ function addTransaction(e) {
   e.preventDefault();
 
   if (text.value.trim() === '' || amount.value.trim() === '') {
-    alert('Please add a text and amount');
+    alert('Please add a text and amount!');
   } else {
     const transaction = {
       id: generateID(),

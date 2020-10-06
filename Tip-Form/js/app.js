@@ -19,9 +19,9 @@ const services = [{
    const feedback = document.querySelector('.feedback');
     feedback.innerHTML = '';
 
-     if  (billAmount === "" || billAmount <="0"){
+     if  (billAmount === "" || billAmount <= "0") {
         feedback.classList.add('showItem', 'alert-danger');
-        feedback.innerHTML += `<p>Bill amount cannot be blank</p>`
+        feedback.innerHTML += `<p>Bill amount cannot be blank!</p>`
         isFeedback = true;
     }
     
@@ -108,7 +108,7 @@ services.forEach(function(service) {
        loader.classList.add('showItem');
 
        // show results after 2 seconds
-       setTimeout(function(){
+       setTimeout(function() {
         loader.classList.remove('showItem');
         tipResultsDOM.textContent= `${results[0].toFixed(2)}`;
         totalAmountDOM.textContent= `${results[1].toFixed(2)}`;
