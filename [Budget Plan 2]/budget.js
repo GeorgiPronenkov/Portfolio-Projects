@@ -68,7 +68,7 @@ addExpense.addEventListener("click", function() {
     let expense = {
           type: "expense",
          title: expenseTitle.value,
-        amount: parseInt(expenseAmount.value)
+        amount: parseFloat(expenseAmount.value)
     }
     ENTRY_LIST.push(expense);
 
@@ -85,7 +85,7 @@ addIncome.addEventListener("click", function() {
     let income = {
         type: "income",
         title: incomeTitle.value,
-        amount: parseInt(incomeAmount.value)
+        amount: parseFloat(incomeAmount.value)
     }
 
     ENTRY_LIST.push(income);
@@ -185,7 +185,7 @@ function showEntry(list, type, title, amount, id) {
 function clearElement(elements) {
     elements.forEach( element => {
         element.innerHTML = "";
-    })
+    });
 }
 
 //13.
@@ -196,7 +196,7 @@ function calculateTotal(type, list) {
         if ( entry.type === type ) {
             sum += entry.amount;
         }
-    })
+    });
 
     return sum;
 }
@@ -227,7 +227,6 @@ function hide( elements ) {
 function active(element) {
     element.classList.add("active")
 }
-
 
 function inactive( elements ) {
     elements.forEach( element => {
