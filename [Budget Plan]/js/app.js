@@ -15,7 +15,7 @@ class UI {
     this.expenseList = document.getElementById("expense-list");
     this.itemList = [];
     this.itemID = 0;
-    
+
   }
   //5.submit budget:
   submitBudgetForm() {
@@ -51,7 +51,7 @@ class UI {
          this.balance.classList.remove('showRed', 'showBlack');
          this.balance.classList.add('showGreen');
      }
-     if (total === 0) {
+     else if (total === 0) {
          this.balance.classList.remove('showRed', 'showGreen');
          this.balance.classList.add('showBlack');
      }
@@ -91,19 +91,19 @@ class UI {
       const div = document.createElement('div');
       div.classList.add('expense');
       div.innerHTML = `
-          <div class="expense-item d-flex justify-content-between align-items-baseline">
-            <h6 class="expense-title mb-0 text-uppercase list-item">- ${expense.title}</h6>
-            <h5 class="expense-amount mb-0 list-item">${expense.amount}</h5>
-            <div class="expense-icons list-item">
-                <a href="#" class="edit-icon mx-2" data-id="${expense.id}">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="#" class="delete-icon" data-id="${expense.id}">
-                <i class="fas fa-trash"></i>
-                </a>
-            </div>
-          </div>   
-      `;
+                       <div class="expense-item d-flex justify-content-between align-items-baseline">
+                          <h6 class="expense-title mb-0 text-uppercase list-item">- ${expense.title}</h6>
+                          <h5 class="expense-amount mb-0 list-item">${expense.amount}</h5>
+                          <div class="expense-icons list-item">
+                             <a href="#" class="edit-icon mx-2" data-id="${expense.id}">
+                               <i class="fas fa-edit"></i>
+                             </a>
+                             <a href="#" class="delete-icon" data-id="${expense.id}">
+                               <i class="fas fa-trash"></i>
+                             </a>
+                          </div>
+                       </div>   
+                      `;
 
       this.expenseList.appendChild(div);
   }
@@ -124,7 +124,9 @@ class UI {
   //edit expense
   editExpense(element) {
      let id = parseInt(element.dataset.id);
-     let parent = element.parentElement.parentElement.parentElement;
+     let parent = element.parentElement
+                         .parentElement
+                         .parentElement;
 
      //remove from dom
      this.expenseList.removeChild(parent);
@@ -197,5 +199,5 @@ function eventListeners() {
 
 //1
 document.addEventListener('DOMContentLoaded', function () {
-  eventListeners(); 
+  eventListeners();
 });
