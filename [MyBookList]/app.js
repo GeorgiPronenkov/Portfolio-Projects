@@ -1,6 +1,5 @@
 //1/Book class: represents a Book
 class Book {
-
     constructor(title, author, isbn) {
         //2.set whatever is passed from title,author,isbn to the properties of object
         this.title = title;
@@ -11,7 +10,6 @@ class Book {
 
 //3.UI Class: handle UI tasks
 class UI {
-
     //4.display books:
     static displayBooks() {
         const books = Store.getBooks();
@@ -37,7 +35,7 @@ class UI {
     static deleteBook(el) {
         if (el.classList.contains('delete')) {
                 el.parentElement
-                  .parentElement //the remove the whole tr
+                  .parentElement //remove the whole tr
                   .remove();
         }
     }
@@ -53,7 +51,7 @@ class UI {
 
         //18.vanish in 4seconds
         setTimeout(() => document.querySelector('.alert')
-                                          .remove(), 4000);
+                                         .remove(), 4000);
     }
 
     //12.5.clear fields:
