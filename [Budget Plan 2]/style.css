@@ -40,9 +40,9 @@ input[type=number] {
 
 .budget-container{
     position: absolute;
-    width: 400px;
-    height: 550px;
-    top: 50%;
+
+    height: 500px;
+    top: 40%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     background-color: #34006a;

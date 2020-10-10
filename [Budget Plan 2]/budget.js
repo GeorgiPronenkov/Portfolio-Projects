@@ -59,7 +59,7 @@ allBtn.addEventListener("click", function() {
     inactive( [incomeBtn, expenseBtn] );
 });
 
-//7.
+//7.add entry to entry_list
 addExpense.addEventListener("click", function() {
     //check if one of the inputs is empty, then => EXIT
     if (!expenseTitle.value || !expenseAmount.value) return;
@@ -103,9 +103,9 @@ allList.addEventListener("click", deleteOrEdit);
 
 //24.
 function deleteOrEdit(event) {
-    const targetBtn = event.target;
+    const targetBtn = event.target;//get the clicked button
 
-    const entry = targetBtn.parentNode;
+    const entry = targetBtn.parentNode;//parent element of clicked button
 
     if (targetBtn.id === DELETE) {
         deleteEntry(entry);
@@ -165,7 +165,7 @@ function updateUI() {
 
     //21.
     updateChart(income, outcome);
-    //22.
+    //22.save to local storage
     localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
 
@@ -220,17 +220,17 @@ function show(element) {
 
 function hide( elements ) {
     elements.forEach( element => {
-        element.classList.add("hide")
-    })
+        element.classList.add("hide");
+    });
 }
 
 function active(element) {
-    element.classList.add("active")
+    element.classList.add("active");
 }
 
 function inactive( elements ) {
     elements.forEach( element => {
-        element.classList.remove("active")
+        element.classList.remove("active");
     });
 }
 
