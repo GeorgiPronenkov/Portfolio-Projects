@@ -14,7 +14,7 @@ import {TiThMenuOutline} from 'react-icons/ti';
 // import {animateScroll as scroll} from 'react-scroll';
 
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
     // const [scrollNav, setScrollNav] = useState(false);
     //
     // const changeNav = () => {
@@ -38,7 +38,7 @@ const Navbar = () => {
             <Nav>
                 <NavbarContainer>
                     <NavLogo to="/">logo</NavLogo>
-                    <MobileIcon>
+                    <MobileIcon onClick={toggle}>
                         <TiThMenuOutline />
                     </MobileIcon>
                     <NavMenu>
