@@ -19,7 +19,7 @@ export const SidebarContainer = styled.aside`
 `;
 
 export const CloseIcon = styled(FaWindowClose)`
-    color: cyan;
+    color: red;
 `;
 
 export const Icon = styled.div`
