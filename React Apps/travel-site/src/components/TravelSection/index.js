@@ -20,7 +20,7 @@ const TravelSection = () => {
     }
 
     return (
-        <TravelContainer>
+        <TravelContainer id="home">
             <TravelBg>
                 <VideoBg
                     autoPlay

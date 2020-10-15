@@ -12,7 +12,7 @@ import {
     Text
 } from "./SignInElements";
 
-const signIn = () => {
+const SignIn = () => {
     return (
         <>
             <Container>
@@ -35,4 +35,4 @@ const signIn = () => {
     );
 };
 
-export default signIn;
+export default SignIn;
