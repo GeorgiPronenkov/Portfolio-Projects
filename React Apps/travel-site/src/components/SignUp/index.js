@@ -6,13 +6,12 @@ import {
     FormContent,
     Form,
     FormH1,
-    FormLabel,
-    FormInput,
+    FormLabel,FormInput,
     FormButton,
     Text
-} from "./SignInElements";
+} from "./SignUpElements";
 
-const SignIn = () => {
+const SignUp = () => {
     return (
         <>
             <Container>
@@ -20,12 +19,14 @@ const SignIn = () => {
                     <Icon to="/"> icon </Icon>
                     <FormContent>
                         <Form action="#">
-                            <FormH1>Sign in...</FormH1>
+                            <FormH1>Sign up now...</FormH1>
                             <FormLabel htmlFor='for'>Email</FormLabel>
                             <FormInput type='email' required />
                             <FormLabel htmlFor='for'>Password</FormLabel>
                             <FormInput type='password' required />
-                            <FormButton type='submit'>Continue</FormButton>
+                            <FormLabel htmlFor='for'>Confirm Password</FormLabel>
+                            <FormInput type='password' required />
+                            <FormButton type='submit'>Submit</FormButton>
                             <Text>Forgot password?</Text>
                         </Form>
                     </FormContent>
@@ -35,4 +36,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default SignUp;
