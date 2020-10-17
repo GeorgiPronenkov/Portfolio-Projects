@@ -57,6 +57,7 @@ form button:hover {
     justify-content: space-between;
     align-items: center;
     transition: all 1s ease;
+    list-style-type: none;
 }
 .filter-todo {
     padding: 1rem;
@@ -67,7 +68,7 @@ form button:hover {
 
 .trash-btn,
 .complete-btn {
-    background: #3fb6f7;
+    background: #f73f3f;
     color: white;
     border: none;
     padding: 1rem;
@@ -75,7 +76,7 @@ form button:hover {
     font-size: 1rem;
 }
 .complete-btn {
-    background: rgb(11, 212, 162);
+    background: rgb(11, 212, 55);
 }
 .todo-item {
     padding: 0rem 0.5rem;
@@ -128,7 +129,7 @@ select {
     top: 0;
     right: 0;
     padding: 1rem;
-    background: #e476f3;
+    background: #223a54;
     cursor: pointer;
     pointer-events: none;
 }
