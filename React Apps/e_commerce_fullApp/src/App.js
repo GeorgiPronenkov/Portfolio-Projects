@@ -25,27 +25,14 @@ import './default.scss';
 const App = props => {
 
     const dispatch = useDispatch();
-    useEffect(() => {
+    // useEffect(() => {
+    //     //set event listeners
+    //     
 
-        //set event listeners
-        const authListener = auth.onAuthStateChanged(async userAuth => {
-            if (userAuth) {
-                const userRef = await handleUserProfile(userAuth);
-                userRef.onSnapshot(snapshot => {
-                    dispatch(setCurrentUser({
-                        id: snapshot.id,
-                        ...snapshot.data()
-                    }));
-                });
-            }
-            //if user in not logged in
-            dispatch(setCurrentUser(userAuth));
-        });
-
-        return () => {
-            authListener();
-        };
-    }, []);
+    //     return () => {
+    //         authListener();
+    //     };
+    // }, []);
 
     return (
         <div className="App">

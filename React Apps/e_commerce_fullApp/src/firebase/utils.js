@@ -15,7 +15,7 @@ GoogleProvider.setCustomParameters({ prompt: 'select_account' });
 
 //function for user profile
 export const handleUserProfile = async (userAuth, additionalData) => {
-    if (!userAuth === null) return;
+    if (!userAuth) return;
     const { uId } = userAuth;
 
     //check if user exists in user collection:
