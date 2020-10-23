@@ -39,3 +39,12 @@ export const handleUserProfile = async (userAuth, additionalData) => {
 
     return userRef; //document use to store user info in local state of app
 };
+
+export const getCurrentUser = () => {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = auth.onAuthStateChanged(userAuth => {
+            unsubscribe();
+            resolve(userAuth);
+        }, reject);
+    })
+}

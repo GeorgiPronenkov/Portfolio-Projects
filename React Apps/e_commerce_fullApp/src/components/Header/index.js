@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from './../../firebase/utils';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { signOutUserStart } from './../../redux/User/user.actions';
 import './stylesHead.scss';
 
 import Logo from './../../assets/logo-payoneer.jpg';
@@ -11,7 +11,13 @@ const mapState = ({ user }) => ({
 });
 
 const Header = props => {
+    //access to dispatch
+    const dispatch = useDispatch();
     const { currentUser } = useSelector(mapState);
+
+    const signOut = () => {
+        dispatch(signOutUserStart());
+    };
     
     return (
         <header className="header">
@@ -31,7 +37,7 @@ const Header = props => {
                                 </Link>
                             </li>
                             <li>
-                                <span onClick={() => auth.signOut()}>
+                                <span onClick={() => signOut()}>
                                     LogOut
                                 </span>
                             </li>
