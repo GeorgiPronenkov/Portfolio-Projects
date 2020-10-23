@@ -67,7 +67,7 @@ export function* signUpUser({ payload: {
     displayName,
     email,
     password,
-    confirmationPassword
+    confirmPassword
 }}) {
      //validation:
     if (password !== confirmPassword) {
@@ -79,11 +79,7 @@ export function* signUpUser({ payload: {
 
     try {
         const { user } = yield auth.createUserWithEmailAndPassword(email, password);
-        yield call(handleUserProfile, user, (user, { displayName }));
-        dispatch({
-            type: userTypes.SIGN_UP_SUCCESS,
-            payload: true
-        });
+        yield call(handleUserProfile, { userAuth: user, additionalata: { displayName }});
     } catch (err) {
         console.log(err);
     }
