@@ -4,9 +4,9 @@ import { auth, handleUserProfile, getCurrentUser, GoogleProvider } from './../..
 import userTypes from './user.types';
 import { signInSuccess, userError, signOutUserSuccess } from './user.actions';
 
-export function* getSnapshotFromUserAuth(user) {
+export function* getSnapshotFromUserAuth(user, additionalData={}) {
     try {
-        const userRef = yield call(handleUserProfile, { userAuth: user });
+        const userRef = yield call(handleUserProfile, { userAuth: user, additionalData });
         //update redux store with user info
         const snapshot = yield userRef.get();
         yield put (
@@ -74,19 +74,22 @@ export function* signUpUser({ payload: {
         const err = ['Password Don\'t match!'];
         yield put(
             userError(err)
-        )
+        );
+        return;
     }
 
     try {
         const { user } = yield auth.createUserWithEmailAndPassword(email, password);
-        yield call(handleUserProfile, { userAuth: user, additionalata: { displayName }});
+        const additionalData = { displayName };
+        yield getSnapshotFromUserAuth(user, additionalData)
+        //yield call(handleUserProfile, { userAuth: user, additionalata: { displayName }});
     } catch (err) {
         console.log(err);
     }
 }
 
 export function* onSignUpUserStart() {
-    takeLatest(userTypes.SIGN_UP_USER_START, signUpUser)
+    yield takeLatest(userTypes.SIGN_UP_USER_START, signUpUser)
 }
 
 export default function* userSagas() {
