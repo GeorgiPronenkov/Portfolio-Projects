@@ -42,6 +42,11 @@ export const resetUserState = () => ({
     type: userTypes.RESET_USER_STATE
 });
 
+export const googleeSignInStart = () => ({
+    type: userTypes.GOOGLE_SIGNIN_START,
+
+});
+
 export const userError = err => ({
     type: userTypes.USER_ERROR,
     payload: err
@@ -69,15 +74,5 @@ export const resetPassword = ({ email }) => async dispatch => {
 };
 
 export const signInWithGoogle = () => async dispatch => {
-    try {
-        await auth.signInWithPopup(GoogleProvider)
-            .then(() => {
-                dispatch({
-                    type: userTypes.SIGN_UP_SUCCESS,
-                    payload: true
-                });
-            });
-    } catch (err) {
-        console.log(err);
-    }
+   
 };
