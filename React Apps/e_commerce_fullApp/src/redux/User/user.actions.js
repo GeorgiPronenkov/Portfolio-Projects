@@ -33,6 +33,15 @@ export const resetPasswordStart = userCredentials => ({
     payload: userCredentials
 });
 
+export const resetPasswordSuccess = () => ({
+    type: userTypes.RESET_PASSWORD_SUCCESS,
+    payload: true
+});
+
+export const resetUserState = () => ({
+    type: userTypes.RESET_USER_STATE
+});
+
 export const userError = err => ({
     type: userTypes.USER_ERROR,
     payload: err
@@ -56,27 +65,7 @@ export const signUpUser = ({ displayName, email, password, confirmPassword }) =>
 };
 
 export const resetPassword = ({ email }) => async dispatch => {
-    const config = {
-        url: 'http://localhost:3000/login'
-    };    
-    try {
-        await auth.sendPasswordResetEmail(email, config)
-            .then(() => {
-                dispatch({
-                    type: userTypes.RESET_PASSWORD_SUCCESS,
-                    payload: true
-                });
-            })
-            .catch(() => {
-                const err = ['Email not found!Please try again.'];
-                dispatch({
-                    type: userTypes.RESET_PASSWORD_ERROR,
-                    payload: err
-                });
-            });
-    } catch (err) {
-            console.log(err);
-    }
+    
 };
 
 export const signInWithGoogle = () => async dispatch => {
