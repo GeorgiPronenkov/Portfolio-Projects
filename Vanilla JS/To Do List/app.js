@@ -45,7 +45,7 @@ function addTodo(event) {
 
 function deleteCheck(e) {
     const item = e.target;
-    //delete todo
+    //DELETE todo
     if (item.classList[0] === 'trash-btn') {
         const todo = item.parentElement;
         //animation
@@ -73,14 +73,14 @@ function filterTodo(e) {
                todo.style.display = "flex";
                break;
            case "completed":
-               if (todo.classList.contains("completed")) {
+               if (todo.classList.contains('completed')) {
                    todo.style.display = "flex";
                } else {
                    todo.style.display = "none";
                }
                break;
            case "uncompleted":
-               if (!todo.classList.contains("completed")) {
+               if (!todo.classList.contains('completed')) {
                    todo.style.display = "flex";
                } else {
                    todo.style.display = "none";
