@@ -11,17 +11,17 @@ const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 const btns = document.querySelectorAll('.bag-btn');
 
-//cart***
+//cart
 let cart = [];
 //buttons
 let buttonsDOM = [];
 
 //class for getting the products
 class Products {
-    async getProducts() {
+    async getProducts() { //async always return a promice."await" -when the promice is settled and return result
        try {
           let result = await fetch('products.json');
-          let data = await result.json();
+          let data = await result.json(); //data in json format
 
           let products = data.items;
           products = products.map(item => {
@@ -65,13 +65,13 @@ class UI {
     }
 
     getBagButtons() {
-        const buttons = [...document.querySelectorAll('.bag-btn')];
+        const buttons = [...document.querySelectorAll('.bag-btn')]; //turn it to an array
         buttonsDOM = buttons;
         //for each button....:
         buttons.forEach(button => {
             let id = button.dataset.id;
-            let inCart = cart.find(item => item.id === id);
-            //check if item is in cart:
+            let inCart = cart.find(item => item.id === id); //check if item id match the button id
+            //check if item is already in cart:
             if(inCart) {
                 button.innerText = "In Cart";
                 button.disabled = true;
@@ -85,6 +85,7 @@ class UI {
                 let cartItem = {...Storage.getProduct(id), amount:1}; //id from dataset
 
                 //add product to cart(array)
+                //...cart- get all items in the cart, cartItem - added to cart
                 cart = [...cart, cartItem];
 
                 //save cart in local storage
@@ -220,8 +221,8 @@ class UI {
 
 //local storage class
 class Storage {
-
-    static saveProducts(products) {
+    //static method - we can use it without instantiate the class (class Storage)!!
+    static saveProducts(products) { //products- parameter-not products array
         localStorage.setItem("products", JSON.stringify(products)); //stringify-save it as string
     }
 
@@ -243,7 +244,7 @@ class Storage {
 
 //eventListener for click
 document.addEventListener("DOMContentLoaded", () => {
-    //create new instance
+    //create new instances
     const ui = new UI();
     const products = new Products();
 
