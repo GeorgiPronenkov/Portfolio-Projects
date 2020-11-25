@@ -1,7 +1,7 @@
 
 (function() {
   
-//Set up a service array
+//Set up a services array
 const services = [{
   value: 1,
   title: "great - 20%"

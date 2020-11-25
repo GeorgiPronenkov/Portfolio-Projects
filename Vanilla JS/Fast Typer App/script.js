@@ -50,7 +50,7 @@ difficultySelect.value = localStorage.getItem('difficulty') !== null
 //Focus on text on start
 text.focus();
 
-//Count down timer:
+//Countdown timer:
 const timeInterval = setInterval(updateTime, 1000);
 
 //Generate random word from list array:
