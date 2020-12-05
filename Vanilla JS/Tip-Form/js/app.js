@@ -114,7 +114,7 @@ services.forEach(function(service) {
         totalAmountDOM.textContent= `${results[1].toFixed(2)}`;
         eachPersonDOM.textContent= `${results[2].toFixed(2)}`;
         resultsDOM.classList.add('showItem');
-      },5000)
+      },3000)
       
       //clear values from DOM elements after 5 seconds
       setTimeout(function() {
