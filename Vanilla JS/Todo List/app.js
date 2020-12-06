@@ -1,5 +1,5 @@
 //retrieve data from local storage
-function get_todos(){
+function get_todos() {
     let todos = [];
     let todos_str = localStorage.getItem('todo');
     if(todos_str !== null){
@@ -8,7 +8,7 @@ function get_todos(){
     return todos;
 }
 
-function add(){
+function add() {
     let task = document.getElementById('task').value;
     let todos = get_todos();
 

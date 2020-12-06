@@ -50,25 +50,23 @@ const removeItem = function(item) {
     todoItems.splice(removeIndex, 1);
 }
 
-const getList = function(todoItems){
+const getList = function(todoItems) {
     itemList.innerHTML = '';
-
-        todoItems.forEach(function(item){
-            itemList.insertAdjacentHTML('beforeend', `
-                                                    <div class="item my-3">
-                                                        <h5 class="item-name text-capitalize">${item}</h5>
-                                                        <div class="item-icons">
-                                                            <a href="#" class="complete-item mx-2 item-icon">
-                                                                <i class="far fa-check-circle"></i></a>
-                                                            <a href="#" class="edit-item mx-2 item-icon">
-                                                                <i class="far fa-edit"></i></a>
-                                                            <a href="#" class="delete-item item-icon">
-                                                                <i class="far fa-times-circle"></i></a>
-                                                        </div>
-                                                    </div>`);
-
-            handleItem(item);
-        });
+    todoItems.forEach(function(item){
+        itemList.insertAdjacentHTML('beforeend', `
+                        <div class="item my-3">
+                            <h5 class="item-name text-capitalize">${item}</h5>
+                            <div class="item-icons">
+                                <a href="#" class="complete-item mx-2 item-icon">
+                                    <i class="far fa-check-circle"></i></a>
+                                <a href="#" class="edit-item mx-2 item-icon">
+                                    <i class="far fa-edit"></i></a>
+                                <a href="#" class="delete-item item-icon">
+                                    <i class="far fa-times-circle"></i></a>
+                            </div>
+                        </div>`);
+        handleItem(item);
+    });
 }
 
 const getLocalStorage = function() {
