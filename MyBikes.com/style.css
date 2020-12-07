@@ -110,9 +110,216 @@ img {
     width: 30px;
     margin-left: 10px;
   }
+  /* button home*/
+  .wrapper {
+    background: #212935;
+  }
+  .wrapper .button-home {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background: rgb(15, 248, 178);
+    overflow: hidden;
+    border-radius: 20%;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgb(83, 252, 153);
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+}
+  .wrapper .button-home:hover {
+    width: 200px;
+  }
+  
+  .wrapper .button-home:hover .icon-home {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    
+}
+  .wrapper .button-home .icon-home {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    text-align: center;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+  }
+  .wrapper .button-home .icon-home  {
+    font-size: 25px;
+    line-height: 60px;
+  }
+  .wrapper .button-home span {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 60px;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+  }
 
   /*services section*/
-  
+  .service-body {
+    background: rgb(49, 49, 90);
+    background: linear-gradient(to right, rgb(15, 15, 41), rgb(25, 19, 27));
+  }
+  ::selection
+{
+    color: #2370e2;
+    background: #fff;
+}
+
+.services
+{
+    display: block;
+    padding: 30px 0;
+}
+.service-container
+{
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.sec-title
+{
+    margin-bottom: 60px;
+    text-align: center;
+}
+.sec-title span
+{
+    color: #28fa67;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .1em;
+    font-weight: bold;
+    display: block;
+    line-height: 1em;
+}
+.sec-title h3
+{
+    line-height: 1.1;
+    margin: 0;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+}
+.service-content
+{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.service
+{
+    width: 25%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.service-box
+{
+    background: #191d30;
+    display: block;
+    position: relative;
+    padding: 55px 0;
+    margin-bottom: 30px;
+    box-shadow: none;
+    text-align: center;
+    transition: all .4s ease;
+}
+
+.service-box:hover
+{
+    box-shadow: 0px 10px 25px rgba(3, 205, 255, 0.74);
+    border-radius: 30%;
+}
+.service-box::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2f77fd;
+    transform: scaleY(0);
+    transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+    transform-origin: 50% 0;
+
+}
+.service-box:hover::before
+{
+    transform: scaleY(0.6);
+    transition-timing-function: 
+    cubic-bezier(0.52,1.64,.37,.66);
+}
+.icon-box
+{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+}
+.service-box:hover .icon-box::before
+{
+    background: rgba(255,255,255,0.1);
+}
+.service-box h3
+{
+    margin: 0;
+    transition:all .4s ease;
+    color: #42f34b;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 28px;
+    line-height: 1.1;
+    text-align: center;
+    position: relative;
+}
+.service-box i
+{
+    color: #00ffff;
+    transition:all .4s ease;
+    font-size: 62px;
+    position: relative;
+}
+
+.service-box:hover i,
+.service-box:hover h3
+{
+    color: rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
 
   /*about us team section*/
 .container{
