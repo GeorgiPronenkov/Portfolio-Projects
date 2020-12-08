@@ -273,5 +273,5 @@ menuBtn.addEventListener('click', () => {
 cancelBtn.addEventListener('click', () => {
     menu.classList.remove("active");
     menuBtn.classList.remove("hide");
-});          
+});   
 //shopNow.addEventListener('click', displayProducts());//????

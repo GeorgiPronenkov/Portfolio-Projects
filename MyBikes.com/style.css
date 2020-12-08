@@ -112,63 +112,56 @@ img {
   }
   /* button home*/
   .wrapper {
-    background: #212935;
+    margin-left: 5px;
   }
   .wrapper .button-home {
     display: inline-block;
     height: 60px;
     width: 60px;
-    background: rgb(15, 248, 178);
+    background: rgb(0, 255, 255);
     overflow: hidden;
-    border-radius: 20%;
+    border-radius: 40px;
     cursor: pointer;
-    box-shadow: 0px 10px 20px rgb(83, 252, 153);
-    -webkit-border-radius: 20%;
-    -moz-border-radius: 20%;
-    -ms-border-radius: 20%;
-    -o-border-radius: 20%;
+    box-shadow: 0px 0px 10px rgb(83, 252, 153);
     transition: all .3s ease-out;
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
     -ms-transition: all .3s ease-out;
     -o-transition: all .3s ease-out;
 }
-  .wrapper .button-home:hover {
-    width: 200px;
+  .button-home:hover {
+    width: 180px;
   }
-  
-  .wrapper .button-home:hover .icon-home {
-    transform: scale(1.3);
-    -webkit-transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    -o-transform: scale(1.3);
-    
-}
-  .wrapper .button-home .icon-home {
+
+   .button-home .icon-home {
+    background: rgb(5, 4, 4);
     display: inline-block;
     height: 60px;
     width: 60px;
-    border-radius: 50px;
     text-align: center;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
     box-sizing: border-box;
     line-height: 60px;
   }
-  .wrapper .button-home .icon-home  {
-    font-size: 25px;
+  .button-home .icon-home  {
+    font-size: 35px;
+    
+  }
+  .button-home .icon-home  a{
     line-height: 60px;
   }
-  .wrapper .button-home span {
+  .button-home .icon-home  a i {
+    color: rgb(1, 255, 200);
+  }
+  .button-home span {
     font-size: 30px;
-    font-weight: 900;
-    line-height: 60px;
+    font-weight: 700;
+    line-height: 50px;
     margin-left: 10px;
     letter-spacing: 1px;
     text-decoration: underline;
+  }
+  .button-home span a {
+    color: black;
   }
 
   /*services section*/
