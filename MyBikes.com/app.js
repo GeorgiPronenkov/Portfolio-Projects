@@ -3,6 +3,10 @@
 const menu = document.querySelector(".menu-list");
 const menuBtn = document.querySelector(".menu-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
+//shop button
+const header = document.querySelector(".hero");
+const shopBtn = document.querySelector(".banner-btn");
+const productsBox = document.querySelector(".products");
 //cart
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
@@ -223,6 +227,9 @@ class UI {
     }
 }
 
+//button click go to products
+shopBtn.addEventListener("click", goToProducts);
+
 //local storage class
 class Storage {
     //static method - we can use it without instantiate the class (class Storage)!!
@@ -274,4 +281,9 @@ cancelBtn.addEventListener('click', () => {
     menu.classList.remove("active");
     menuBtn.classList.remove("hide");
 });   
-//shopNow.addEventListener('click', displayProducts());//????
+//redirect to images
+function goToProducts(e) {
+    let scroll = header.offsetTop + productsBox.offsetTop;
+    scrollBy({top: scroll, behavior: "smooth"});
+}
+
