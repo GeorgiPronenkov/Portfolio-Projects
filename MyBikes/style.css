@@ -572,8 +572,162 @@ img {
    }
 } */        
 
+/*features menu section*/
+.features {
+  background: rgb(30, 31, 32);
+  padding-top: 10px;
+}
+h4 {
+  letter-spacing: 0;
+  font-weight: normal;
+  position: relative;
+  padding: 0 0 10px 0;
+  line-height: 120% !important;
+  color: rgb(43, 226, 211);
+  margin: 0;
+  text-transform: uppercase;
+}
+#features li p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: wheat;
+}
+#features li {
+  display: table;
+  width: 100%;
+  margin: 35px 0;
+  cursor: pointer;
+}
+.features-left,
+.features-right {
+  padding: 0 10px;
+}
 
+.features-right li:last-child,
+.features-left li:last-child {
+  margin-bottom: 10px;
+  padding-bottom: 0 !important;
+}
+.features-right li i,
+.features-left li i {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 22px;
+  line-height: 60px;
+  display: table;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 55;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(54, 209, 106);
+  transform: 0.4s;
+  padding: 0;
+}
 
+.features-left li i:before,
+.features-right li i:before {
+  text-align: center;
+}
+.features-left i {
+  float: right;
+}
+.features-right i {
+  float: left;
+}
+.fl-inner {
+  text-align: left;
+  margin-right: 30px;
+}
+.fr-inner {
+  text-align: right;
+  margin-right: 30px;
+}
+.effect-1 {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  transition: background 0.2s, color 0.2s;
+}
+.effect-1:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  box-sizing: content-box;
+  top: -7px;
+  left: -7px;
+  padding: 7px;
+  box-shadow: 0 0 0 2px rgb(255, 38, 0);
+  transition: scale(1.2);
+  opacity: 0;
+  border-radius: 7px;
+}
+.effect-1:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+.highlight h4:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  left: 0;
+  margin: 0;
+  height: 2px;
+  background: rgb(245, 23, 23);
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.highlight.active h4:after {
+  width: 100%;
+  left: 0;
+  visibility: visible;
+}
+.phone-holder {
+  display: block;
+  height: 500px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 300px;
+  margin: auto;
+  overflow: hidden;
+}
+/* #fon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  balckground: url() center top no-repeat;
+  z-index: 2;
+  overflow: hidden;
+} */
+
+.hgi {
+  position: absolute;
+  top: 40px;
+  left: 12px;
+  width: 270px;
+  height: 448px;
+  visibility: hidden;
+}
+.hgi img {
+  width: 290px;
+  height: 460px;
+}
+
+.hgi.active {
+  visibility: visible;
+}
 
   /* --------------- End of Navbar ---------------- */
 
@@ -603,6 +757,7 @@ img {
     text-transform: uppercase;
     letter-spacing: var(--mainSpacing);
     font-size: 1rem;
+    font-weight: bold;
     background: var(--primaryColor);
     color: var(--mainBlack);
     border: 1px solid var(--primaryColor);
@@ -611,10 +766,14 @@ img {
   }
   .banner-btn:hover {
     background: transparent;
-    color: greenyellow;
+    color: rgb(7, 53, 49);
     font-weight: bold;
     border: 2px solid black;
+    transform: scale(1.1);
+    border-radius: 30px;
+    border: 4px solid rgb(7, 251, 170);
   }
+  
   /* --------------- End of Hero ---------------- */
 
   /* --------------- Products ---------------- */
@@ -798,25 +957,8 @@ img {
   }
   /* --------------- End of Cart ---------------- */
 
- /* Large screens ----------- */
- @media only screen and (min-width: 2600px) {
-   .navbar {
-     height: 100px;
-   }
-  .navbar .content {
-    margin-right: 0;
-    width: 50%;
-  }
-  body > nav > div > ul > li:nth-child(2) > a {
-    font-size: 40px;
-  }
-  .navbar-center>img {
-    height: 100px;
-  }
- }
-
 /* Desktops and laptops ----------- */
-@media only screen 
+/* @media only screen 
 and (min-width : 1224px) and (max-width: 1600px)  {
   .navbar .content {
     margin-right: 0;
@@ -829,11 +971,11 @@ and (min-width : 1224px) and (max-width: 1600px)  {
   }
 }
 /* iPads (portrait and landscape) ----------- */
-@media only screen 
+/* @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) {
   /* Styles */
-}
+
 
   @media only screen 
   and (min-device-width : 360px) 
@@ -882,7 +1024,7 @@ and (max-device-width : 1024px) {
       font-size: 20px;
       color: #fff;
     }
-  }
+  }  
   
   /* @media screen and ( min-width: 360px ) and ( max-width:995px ) {
     .icon {
