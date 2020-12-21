@@ -211,16 +211,22 @@ img {
     transition: transform 80ms ease-in;
     cursor: pointer;
   }
-
+  .btns:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+    background: #f82804;
+  }
   button.ghost {
     background: transparent;
     border-color: #FFFFFF;
   }
-
+  button.ghost:hover {
+    transform: scale(1.1);
+    background: #0004ff;
+  }
   button:active {
     transform: scale(0.95);
   }
-
   button:focus {
     outline: none;
   }
@@ -310,11 +316,7 @@ img {
   }
   .main-container.right-panel-active .overlay-container{
     transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
-}
+  }
   .main-container.right-panel-active .overlay {
     transform: translateX(50%);
   }
@@ -385,43 +387,8 @@ img {
     right: 0;
     transform: translateX(0);
   }
-
+  /* end of user section*/
   
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-  
-
-
-  
-
-
-
-  
-
-
   /*services section*/
   .service-body {
     background: rgb(49, 49, 90);
