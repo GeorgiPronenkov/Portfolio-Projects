@@ -11,7 +11,6 @@ const productsBox = document.querySelector(".products");
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
 const clearCartBtn = document.querySelector('.clear-cart');
-const shopNow = document.getElementsByClassName('.banner-btn'); //?? from banner-btn => section.products
 const cartDOM = document.querySelector('.cart');
 const cartOverlay = document.querySelector('.cart-overlay');
 const cartItems = document.querySelector('.cart-items');
@@ -19,6 +18,10 @@ const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 const btns = document.querySelectorAll('.bag-btn');
+//user panel 
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('main-container');
 
 //cart
 let cart = [];
@@ -227,9 +230,6 @@ class UI {
     }
 }
 
-//button click go to products
-shopBtn.addEventListener("click", goToProducts);
-
 //local storage class
 class Storage {
     //static method - we can use it without instantiate the class (class Storage)!!
@@ -253,6 +253,8 @@ class Storage {
     }
 }
 
+
+
 //eventListener for click
 document.addEventListener("DOMContentLoaded", () => {
     //create new instances
@@ -271,7 +273,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ui.getBagButtons();
         ui.cartLogic();
     });
+
+    //redirect to product when click SHOP NOW
+    shopBtn.addEventListener("click", goToProducts);
+    //redirect to images wnen click SHOP NOW
+    function goToProducts(e) {
+        let scroll = header.offsetTop + productsBox.offsetTop;
+        scrollBy({top: scroll, behavior: "smooth"});
+    }
 });
+
+//user panel change overlay signIn/signUp
+signUpButton.addEventListener('click', () => {
+    container.classList.add('right-panel-active');
+});
+signInButton.addEventListener('click', () => {
+    container.classList.remove('right-panel-active');
+});
+
 //hide and show menu        
 menuBtn.addEventListener('click', () => {
     menu.classList.add("active");
@@ -281,9 +300,3 @@ cancelBtn.addEventListener('click', () => {
     menu.classList.remove("active");
     menuBtn.classList.remove("hide");
 });   
-//redirect to images
-function goToProducts(e) {
-    let scroll = header.offsetTop + productsBox.offsetTop;
-    scrollBy({top: scroll, behavior: "smooth"});
-}
-
