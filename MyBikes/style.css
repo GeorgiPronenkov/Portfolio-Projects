@@ -94,6 +94,12 @@ img {
   .cart-btn {
     position: relative;
     cursor: pointer;
+    margin-left: 5px;
+  }
+  .cart-btn i:hover {
+    transform: scale(1.2);
+    color: red;
+    transition: 0.3s ease-in-out;
   }
   .cart-items {
     position: absolute;
@@ -105,13 +111,16 @@ img {
     color: var(--mainWhite);
   }
 
-  
   /* user profile */
   .nav-icon-user img {
     height: 30px;
     width: 30px;
     margin-left: 10px;
   }
+  .nav-icon-user img:hover {
+    transform: scale(1.5);
+    transition: 0.3s ease-in-out;
+}
   /* button home*/
   .wrapper {
     margin-left: 5px;
@@ -134,7 +143,7 @@ img {
   .button-home:hover {
     width: 180px;
   }
-
+  
    .button-home .icon-home {
     background: rgb(5, 4, 4);
     display: inline-block;
