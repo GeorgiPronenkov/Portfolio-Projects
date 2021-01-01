@@ -49,7 +49,7 @@ function validate() {
 	}
 
 	//submit button
-	submitBtn.on('click', function (ev) {
+	submitBtn.on('click', function(ev) {
 		ev.preventDefault();
 		validateForm();
 		

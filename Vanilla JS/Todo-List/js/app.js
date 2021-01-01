@@ -58,9 +58,9 @@ const getList = function(todoItems) {
                             <h5 class="item-name text-capitalize">${item}</h5>
                             <div class="item-icons">
                                 <a href="#" class="complete-item mx-2 item-icon">
-                                    <i class="far fa-check-circle"></i></a>
+                                    <i class="fas fa-check-circle"></i></a>
                                 <a href="#" class="edit-item mx-2 item-icon">
-                                    <i class="far fa-edit"></i></a>
+                                    <i class="fas fa-edit"></i></a>
                                 <a href="#" class="delete-item item-icon">
                                     <i class="far fa-times-circle"></i></a>
                             </div>
