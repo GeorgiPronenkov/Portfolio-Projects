@@ -135,10 +135,6 @@ img {
     cursor: pointer;
     box-shadow: 0px 0px 10px rgb(83, 252, 153);
     transition: all .3s ease-out;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -ms-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
 }
   .button-home:hover {
     width: 180px;
@@ -151,27 +147,24 @@ img {
     width: 60px;
     text-align: center;
     box-sizing: border-box;
-    line-height: 60px;
+    line-height: 50px;
+    font-size: 55px;
   }
-  .button-home .icon-home  {
-    font-size: 35px;
-  }
-  .button-home .icon-home  a{
-    line-height: 60px;
-  }
-  .button-home .icon-home  a i {
+  
+  .button-home .link i {
     color: rgb(1, 255, 200);
+    font-size: 40px;
   }
-  .button-home span {
+  .button-home .go-to:hover {
     font-size: 30px;
     font-weight: 700;
     line-height: 50px;
     margin-left: 10px;
     letter-spacing: 1px;
-    text-decoration: underline;
   }
-  .button-home span a {
+  .button-home .go-to a {
     color: black;
+    font-size: 30px;
   }
 
   /* user profile*/
@@ -807,7 +800,7 @@ img {
 } */        
 
 /*features menu section*/
-.features {
+#features {
   background: rgb(30, 31, 32);
   padding-top: 10px;
 }
