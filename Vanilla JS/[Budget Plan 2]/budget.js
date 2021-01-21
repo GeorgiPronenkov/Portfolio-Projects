@@ -19,18 +19,17 @@ const addExpense = document.querySelector(".add-expense");
 const expenseTitle = document.getElementById("expense-title-input");
 const expenseAmount = document.getElementById("expense-amount-input");
 
-
 const addIncome = document.querySelector(".add-income");
 const incomeTitle = document.getElementById("income-title-input");
 const incomeAmount = document.getElementById("income-amount-input");
 
 //4.variables:
-let ENTRY_LIST;
+let ENTRY_LIST = [];
 let balance = 0,
     income  = 0,
     outcome = 0;
 const DELETE = "delete",
-      EDIT   = "edit";
+        EDIT = "edit";
 
 //22.check if there is a data in Local storage
 ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
@@ -59,7 +58,7 @@ allBtn.addEventListener("click", function() {
     inactive( [incomeBtn, expenseBtn] );
 });
 
-//7.add entry to entry_list
+//7.add entries to entry_list
 addExpense.addEventListener("click", function() {
     //check if one of the inputs is empty, then => EXIT
     if (!expenseTitle.value || !expenseAmount.value) return;
@@ -98,8 +97,6 @@ addIncome.addEventListener("click", function() {
 incomeList.addEventListener("click", deleteOrEdit);
 expenseList.addEventListener("click", deleteOrEdit);
 allList.addEventListener("click", deleteOrEdit);
-
-//6.HELPERS:
 
 //24.
 function deleteOrEdit(event) {
