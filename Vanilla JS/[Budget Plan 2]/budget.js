@@ -186,7 +186,7 @@ function clearElement(elements) {
 }
 
 //13.
-function calculateTotal(type, list) {
+function calculateTotal(type, list) { 
     let sum = 0;
 
     list.forEach( entry => {
