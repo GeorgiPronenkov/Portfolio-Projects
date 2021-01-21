@@ -81,7 +81,7 @@ addIncome.addEventListener("click", function() {
     //check if one of the inputs is empty, then => EXIT
     if (!incomeTitle.value || !incomeAmount.value) return;
 
-    //10.save entry to ENTRY_LIST
+    //10.save entry to ENTRY_LIST as object 
     let income = {
         type: "income",
         title: incomeTitle.value,
