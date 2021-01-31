@@ -10,7 +10,7 @@ const services = [{
   title: "good - 10%"
 },{
   value: 3,
-  title: "bad - 2%"
+  title: "bad - 2%" 
 }]
 
   const validateInput = function(billAmount, numUsers, selectedService) {
