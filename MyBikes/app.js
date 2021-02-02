@@ -1,4 +1,4 @@
-//1.set variables:
+//set variables:
 //menu
 const menu = document.querySelector(".menu-list");
 const menuBtn = document.querySelector(".menu-btn");
@@ -36,15 +36,15 @@ class Products {
           let data = await result.json(); //data in json format
 
           let products = data.items;
-          products = products.map(item => {
-             const { title, price } = item.fields;
+          products = products.map(item => { //each item
+             const { title, price } = item.fields; //get the two properties first
              const { id } = item.sys;
              const image = item.fields.image.fields.file.url;
-
+             //return object    
              return { title, price, id, image };
           });
 
-          return products;
+          return products; 
 
        } catch (error) {
              console.log(error);
@@ -53,7 +53,7 @@ class Products {
 }
 
 //UI class - display products
-class UI {
+class UI { 
     displayProducts(products) {
         let result = '';
         products.forEach(product => {
@@ -253,8 +253,6 @@ class Storage {
     }
 }
 
-
-
 //eventListener for click
 document.addEventListener("DOMContentLoaded", () => {
     //create new instances
@@ -267,8 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //get all products
     products.getProducts()
             .then(products => { //console.log(products)
-            ui.displayProducts(products)
-        Storage.saveProducts(products);  
+                ui.displayProducts(products)
+                Storage.saveProducts(products);  
     }).then(() => {
         ui.getBagButtons();
         ui.cartLogic();
